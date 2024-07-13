@@ -1,0 +1,88 @@
+.main {
+    width: 400px;
+}
+
+
+/* using grid */
+.grid-container > div {
+    background-color: bisque;
+    padding: 20px;
+    text-align: center;
+}
+.item1 {grid-area: header;}
+.item2 {grid-area: menu;}
+.item3 {grid-area: main;}
+.item4 {grid-area: aside;}
+.item5 {grid-area: left;}
+.item6 {grid-area: right;}
+.item7 {grid-area: footer;}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+        'header header header header header header'
+        'menu main main main main aside'
+        'menu left left right right aside'
+        'footer footer footer footer footer footer'
+        ;
+    gap: 10px;
+    background-color: green;
+    border: 10px solid green;
+}
+
+
+/* using table */
+table{
+    border: 1px solid;
+    th, td {
+        border: 1px solid;
+        padding: 20px;
+        height: 50px;
+    
+    }
+} 
+
+
+/* banner */
+.mainBanner {
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: crimson;
+
+}
+.textBAnner {
+    margin-top: 40px
+}
+    
+.imageSize {
+    width: 400px;
+}
+.text {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 760px) {
+    .mainBanner {
+        flex-direction: column-reverse;
+    }
+    .imageSize {
+        max-width: -webkit-fill-available;
+    }
+    .text {
+        font-size: 24px;
+    }
+
+    .grid-container {
+        grid-template-areas: 
+            'header '
+            'menu '
+            'main '
+            'aside '
+            'left ' 
+            'right '
+            'footer '
+            ;
+    }
+}
